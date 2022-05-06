@@ -43,6 +43,7 @@ const App = () => {
     const response = await commerce.cart.empty()
 
     setCart(cart)
+    document.location.reload()
   }
 
   useEffect(() => {
@@ -55,7 +56,7 @@ const App = () => {
   return (
     <Router>
     <div>
-        <Navbar totalItems={cart.totalItems} />
+        <Navbar totalItems={cart.total_items} />
         <Routes>
           <Route exact path ='/' element={<Products products={products} onAddToCart={handleAddToCart} /> } />         
           <Route exact path='/cart' element={<Cart
